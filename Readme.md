@@ -10,6 +10,7 @@
 <ol>
 	<li>A laptop and/or computer</li>
 	<li>Visual Studio 2017</li>
+	<li><a href="https://github.com/Gabroide/Zork">Game link to repository</a> or <a href="https://github.com/Gabroide/Zork/releases">Link to release</a></li>
 </ol>
 
 <h2>Installing</h2>
@@ -37,33 +38,9 @@ the answer can be from a year to a name.  part from run you will have to think.<
 
 <h3>The Map</h3>
 <p>Zork got a copy of a map . To get it he had to do not too much nice things...<p>
-<pre>
-						______________________
-						|			|
-						|	dungeon	|
-						|			|
-						-----------------------
-							    |
-							    |
-						______________________
-						|			|
-						|	corridor	|
-						|			|
-						-----------------------
-							    |
-							    |
-	______________________		______________________	______________________
-	|			|		|			|	|			|
-	|	Dragon's	|______________|	   hall		|______	|	library		|
-	|	  cave		|		|			|	|			|
-	|			|		------------------------	-----------------------
-	-----------------------			    \		______________________
-							       - \		|			|
-								-------|	above		|
-									|	room		|
-									|			|
-									------------------------
-</pre>
+<div align="center"> 
+     <img src="map.png" alt="Map of NightDead cavern to play Zork" title="Map"</img> 
+ </div>
 
 <br/>
 
@@ -144,7 +121,7 @@ the answer can be from a year to a name.  part from run you will have to think.<
 
 <br/>
  
-<h3>Problems deected</h3>
+<h3>Problems detected</h3>
 <p>A bug has been detected while testing the game. For some reason, after playing and giving some orders o Zork, Zork doesn't understand the orders, but after a few orders
 more Zork starts to undersand orders again. I'm trying to find in which part of the loop is the problem.</p>
 <p>Sorry!</p>
