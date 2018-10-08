@@ -31,12 +31,19 @@ void World::Init()
 	knife = Item("knife", "Zork can throw me to an enemy but... Zork hasn't practise for long time you can miss the hit.", true);
 	blade = Item("blade", "Yeah! Orcs' Widow! The best blade on Earth.", true);
 	paper = Item("map", "Isthe map of the caves. It says the exit is at the east. It also says Zork has to cross NightDead chambre in his way.", true);
-	vault = Item("vault", "Put your code (XX-XX-XX) to open the vault. Clue: 01-02-03-05-...", false, true, false, true, &paper, true, "07-11-13");
+	vault = Item("vault", "Code (XX-XX-XX) to open the vault. Clue: 01-02-03-05-...", false, true, false, true, &paper, true, "07-11-13");
+	key = Item("key", "A rusted old kay. Time ago you where able to read the inscription.", true);
+	book = Item("book", "A gnawed old book. It used to have papers but now... Zork only can see a weird lock. Code (X.X.X.). Clue: Tolkien", false, true, false, true, &key, true, "J.R.R.");
+	air = Item("air", "This vault has... AIR! Zork'll kill all orcs on the Easth!.", false);
+	vault1 = Item("vault", "A small vault, it seams it has something inside. Code (XXXX). Clue: 11-09.", false, true, false, true, &air, true, "1714");
 	knifeCreature = Item("knife", "A small knofe to throw.", true);
 	bladeCreature = Item("blade", "That blade is quite... Big", true);
-	fireCreature = Item("fire", "NightBlade can breath and throw fire!", false);
+	fireCreature = Item("fire", "NightDead can breath and throw fire!", false);
 
 	paper.putInsideOfAnItem(&vault);
+	key.putInsideOfAnItem(&book);
+	air.putInsideOfAnItem(&vault1);
+
 
 	// Items in rooms
 
@@ -64,8 +71,9 @@ void World::Init()
 	dungeon.addItem(&paper);
 	dungeon.addItem(&bone);
 	dungeon.addItem(&vault);
-	aboveRoom.addItem(&knife);
-	library.addItem(&blade);
+	aboveRoom.addItem(&blade);
+	library.addItem(&book);
+	library.addItem(&knife);
 
 	hall.addCreature(&orc1);
 	library.addCreature(&orc2);
@@ -74,7 +82,7 @@ void World::Init()
 	// Zork
 	player.setActualRoom(&dungeon);
 
-	timeWhenYouEnter = 0;
+	startingTime = 0;
 	creaturePresentInTheRoom = false;
 
 	player.getActualRoom()->readRoom();
@@ -118,7 +126,7 @@ int World::Iteration(InputOrder io)
 			if (player.getActualRoom()->isCreaturePresent())
 			{
 				creaturePresentInTheRoom = true;
-				timeWhenYouEnter = clock();
+				startingTime = clock();
 			}
 			else
 			{
@@ -305,7 +313,7 @@ int World::Iteration(InputOrder io)
 	case InputOrder::ATTACK:
 		if (creaturePresentInTheRoom)
 		{
-			if (utils.playerWinsOrLoses("attack", player.getItemEquiped(), player.getActualRoom()->getCreature()->getItemEquiped(), clock() - timeWhenYouEnter)) {
+			if (utils.playerWinsOrLoses("attack", player.getItemEquiped(), player.getActualRoom()->getCreature()->getItemEquiped(), clock() - startingTime)) {
 				Item* dropItem = player.getActualRoom()->getCreature()->getItemEquiped();
 				creaturePresentInTheRoom = false;
 				player.getActualRoom()->creatureDies();
@@ -339,7 +347,7 @@ int World::Iteration(InputOrder io)
 	case InputOrder::THROW:
 		if (creaturePresentInTheRoom)
 		{
-			if (utils.playerWinsOrLoses("throw", player.getItemEquiped(), player.getActualRoom()->getCreature()->getItemEquiped(), clock() - timeWhenYouEnter)) {
+			if (utils.playerWinsOrLoses("throw", player.getItemEquiped(), player.getActualRoom()->getCreature()->getItemEquiped(), clock() - startingTime)) {
 				Item* dropItem = player.getActualRoom()->getCreature()->getItemEquiped();
 				creaturePresentInTheRoom = false;
 				player.getActualRoom()->creatureDies();

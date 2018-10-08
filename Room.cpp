@@ -82,22 +82,22 @@ void Room::readRoom() const
 			else if ((*it)->youCanOpenIt() && (*it)->isOpened())
 				cout << "Zork found opened a " << (*it)->getName() << endl;
 			else if ((*it)->youCanOpenIt() && !(*it)->isOpened())
-				cout << "<-- A closed " << (*it)->getName() << endl;
+				cout << " A " << (*it)->getName() << " closed." << endl;
 			else
-				cout << "<-- A " << (*it)->getName() << endl;
+				cout << " A " << (*it)->getName() << endl;
 		}
 		cout << endl;
 	}
 	if (creaturePresent)
 	{
-		cout << "<-- CAUTION: Theres also a enemy in the room!!!" << endl;
+		cout << " Zork can smell can something! Zorc must be quite to kill that creture." << endl;
 		if (creatureInTheRoom->getItemEquiped()->getName() == "knife")
 		{
-			cout << "<-- Care, he has a knife!" << endl;
+			cout << " The orc has a knfe! Zork don't believe orcs can use knifes." << endl;
 		}
-		if (creatureInTheRoom->getItemEquiped()->getName() == "gun")
+		if (creatureInTheRoom->getItemEquiped()->getName() == "blade")
 		{
-			cout << "<-- He has a gun, and it's pointing to you!!! RUN, do something!!!" << endl;
+			cout << " The orc has a blade! But a bladeis just a long knife in the darkness..." << endl;
 		}
 	}
 }

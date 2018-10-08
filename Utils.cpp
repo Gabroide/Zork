@@ -10,11 +10,11 @@ Utils::~Utils()
 
 }
 
-bool Utils::playerWinsOrLoses(string action, Item* playerItem, Item* enemyItem, clock_t timeSinceEnterRoom) const
+bool Utils::playerWinsOrLoses(string action, Item* playerItem, Item* creatureItem, clock_t timeAtRoom) const
 {
-	if (timeSinceEnterRoom >= 10000)
+	if (timeAtRoom >= 10000)
 	{
-		if (enemyItem->getName() == "blade")
+		if (creatureItem->getName() == "blade")
 			cout << "Orc stabed you with his blade." << endl;
 		else
 			cout << "The orc has throw you his knife." << endl;
@@ -24,7 +24,7 @@ bool Utils::playerWinsOrLoses(string action, Item* playerItem, Item* enemyItem, 
 	else if (playerItem == NULL)
 	{
 		cout << "Zork has no weapon. Zork's hands are lke a treasure, I won't use them against orcs." << endl;
-		if (enemyItem->getName() == "blade")
+		if (creatureItem->getName() == "blade")
 			cout << "The orc has stabbed with his blade." << endl;
 		else
 			cout << "The orc has stabbed Zorc." << endl;
@@ -70,7 +70,7 @@ bool Utils::playerWinsOrLoses(string action, Item* playerItem, Item* enemyItem, 
 		}
 		else
 		{
-			if (enemyItem->getName() == "blade")
+			if (creatureItem->getName() == "blade")
 			{
 				cout << "Zork knife is very short, the orc's lade is longer..." << endl;
 				return false;
@@ -87,7 +87,7 @@ bool Utils::playerWinsOrLoses(string action, Item* playerItem, Item* enemyItem, 
 		if (action == "throw")
 		{
 			cout << "Ha? Zorks knows how to throw knifes, but blades..." << endl;
-			if (enemyItem->getName() == "blade")
+			if (creatureItem->getName() == "blade")
 				cout << "The orc uses his blade against you." << endl;
 			else
 				cout << "The orc stabs Zork with his knife." << endl;

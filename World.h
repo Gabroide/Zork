@@ -9,12 +9,12 @@ class World
 {
 private:
 	Player player;
-	clock_t timeWhenYouEnter;
+	clock_t startingTime;
 	bool creaturePresentInTheRoom;
 	Utils utils;
 	Creature orc1, orc2, dragon;
 	Room dungeon, corridor, hall, library, aboveRoom, dragonCave, exit;
-	Item paper, bone, knife, blade, vault, knifeCreature, bladeCreature, fireCreature;
+	Item paper, bone, knife, blade, vault, key, book, air, vault1, knifeCreature, bladeCreature, fireCreature;
 
 public:
 	World();

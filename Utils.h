@@ -11,6 +11,6 @@ class Utils
 public:
 	Utils();
 	~Utils();
-	bool playerWinsOrLoses(string action, Item* playerItem, Item* enemyItem, clock_t timeSinceEnterRoom) const;
+	bool playerWinsOrLoses(string action, Item* playerItem, Item* enemyItem, clock_t timeAtRoom) const;
 	InputOrder selectEnum(string s) const;
 };
