@@ -28,7 +28,6 @@ private:
 public:
 
 	// Rooms
-
 	Room();
 	Room(string name);
 	Room(string name, string story);
@@ -36,7 +35,6 @@ public:
 	~Room();
 
 	// Asking
-
 	string getName() const;
 	bool isItemPresent(string itemName) const;
 	bool isCreaturePresent() const;
@@ -45,7 +43,6 @@ public:
 	Item* getItemByName(string itemName) const;
 
 	// Modifying
-
 	void creatureDies();
 	void setDirection(string direction, string definition, Room* nextRoom, bool opened, string itemToOpen);
 	void addItem(Item* item);

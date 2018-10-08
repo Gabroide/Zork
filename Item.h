@@ -26,8 +26,8 @@ public:
 	Item(string name, string message, bool canTakeIt, bool canBeOpened, bool opened, bool theresAnItemInside, Item* itemInside, bool needCode, string code);
 	~Item();
 
+	
 	// Asking
-
 	string getName() const;
 	bool youCanTakeIt() const;
 	bool youCanOpenIt() const;
@@ -40,8 +40,8 @@ public:
 	bool isOpened() const;
 	bool isInsideAnItem() const;
 
-	// Modifiers
 
+	// Modifiers
 	Item* takeItem();
 	Item* takeOutsideItem();
 	void putItem(Item* newItemInside);
@@ -49,8 +49,8 @@ public:
 	void open();
 	void close();
 
-	// Codes
 
+	// Codes
 	bool checkCode(string code) const;
 
 };

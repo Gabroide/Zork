@@ -18,35 +18,36 @@ void World::Init()
 	dragon = Creature();
 
 	// Rooms
- 	dungeon = Room("dungeon", "Zork is going to use the night to scape from this dungeon.");
-	corridor = Room("corridor", "You're in a corridor. There are a lot of jails around you and the guard is on the floor drunk. Better run than fight.");
-	hall = Room("hall", "Zork is in a stance full of doors and a lot of feetprints. Orcs cross this stance all time.");
-	library = Room("library", "Zork is afraid! Zork doesn't like books and I'm surronded of them! HELP!.");
-	aboveRoom = Room("hiden room", "Zork is a darkness room above the corridor. There's light up here.");
-	dragonCave = Room("dragon's cave", "Zork can see the light throght that door. But first Zork has to kill NightDead.");
-	exit = Room("freedome", "Sun is shining, birds singing,... Do you think is a fairytale story? It is f**king cold here! Zork is thinking about coming back to the dungeon and scape later, once this cold rain stops.");
+ 	dungeon = Room("dungeon", " Zork is going to use the night to scape from this dungeon.");
+	corridor = Room("corridor", " Zork's in a corridor. There are a lot of jails around you and the guard is on the floor drunk. Better run than fight.");
+	hall = Room("hall", " Zork's in a stance full of doors and a lot of feetprints. Orcs cross this stance all time.");
+	library = Room("library", " Zork's afraid! Zork doesn't like books and I'm surronded of them! HELP!.");
+	aboveRoom = Room("hiden room", " Zork's in a darkness room above the corridor. There's light up here.");
+	dragonCave = Room("dragon's cave", " Zork can see the light throght that door. But first Zork has to kill NightDead.");
+	exit = Room("freedome", " Sun is shining, birds are singing,... Do you think it's a fairytale story? It's f**king cold here! Zork is thinking about coming back to the dungeon and scape later, once this cold rain stops.");
 
 	// Items
-	bone = Item("bone", "Zork can useit to smash some orcs' heads", true);
-	knife = Item("knife", "Zork can throw me to an enemy but... Zork hasn't practise for long time you can miss the hit.", true);
-	blade = Item("blade", "Yeah! Orcs' Widow! The best blade on Earth.", true);
-	paper = Item("map", "Isthe map of the caves. It says the exit is at the east. It also says Zork has to cross NightDead chambre in his way.", true);
-	vault = Item("vault", "Code (XX-XX-XX) to open the vault. Clue: 01-02-03-05-...", false, true, false, true, &paper, true, "07-11-13");
-	key = Item("key", "A rusted old kay. Time ago you where able to read the inscription.", true);
-	book = Item("book", "A gnawed old book. It used to have papers but now... Zork only can see a weird lock. Code (X.X.X.). Clue: Tolkien", false, true, false, true, &key, true, "J.R.R.");
-	air = Item("air", "This vault has... AIR! Zork'll kill all orcs on the Easth!.", false);
-	vault1 = Item("vault", "A small vault, it seams it has something inside. Code (XXXX). Clue: 11-09.", false, true, false, true, &air, true, "1714");
-	knifeCreature = Item("knife", "A small knofe to throw.", true);
-	bladeCreature = Item("blade", "That blade is quite... Big", true);
-	fireCreature = Item("fire", "NightDead can breath and throw fire!", false);
+	bone = Item("bone", " Zork can throw it to an enemy but... Zork doesn't know if it will kill a creature.", true);
+	knife = Item("knife", " Zork can throw it to an enemy but... Zork hasn't practise for long time you can miss the hit.", true);
+	blade = Item("blade", " Yeah! Orcs' Widow! The best blade on Earth.", true);
+	paper = Item("map", " It's the map of the caves. It says the exit is at the east. It also says Zork has to cross NightDead chambre in his way.", true);
+	vault = Item("vault", " Code (XX-XX-XX) to open the vault. Clue: 01-02-03-05-...", false, true, false, true, &paper, true, "07-11-13");
+	key = Item("key", " A rusted old key. Time ago you where able to read the inscription.", true);
+	book = Item("book", " A gnawed old book. It used to have papers but now... Zork only can see a weird lock. Code (X.X.X.). Clue: Tolkien", false, true, false, true, &key, true, "J.R.R.");
+	air = Item("air", " This vault has... AIR! Zork'll kill all orcs on the Easth!.", false);
+	vault1 = Item("vault", " A small vault, it seams it has something inside. Code (XXXX). Clue: 11-09.", false, true, false, true, &air, true, "1714");
+	knifeCreature = Item("knife", " Small knife to throw.", true);
+	bladeCreature = Item("blade", " That blade is quite... Big", true);
+	fireCreature = Item("fire", " NightDead can breath and throw fire!", false);
 
+
+	// Item inside item
 	paper.putInsideOfAnItem(&vault);
 	key.putInsideOfAnItem(&book);
 	air.putInsideOfAnItem(&vault1);
 
 
-	// Items in rooms
-
+	// Rooms directions
 	dungeon.setDirection("south", "a door", &corridor, true, "");
 	corridor.setDirection("north", "a door", &dungeon, true, "");
 
@@ -64,22 +65,28 @@ void World::Init()
 
 	dragonCave.setDirection("west", "a door", &exit, true, "");
 
+
+	// Creature equipment
 	orc1.setItemEquiped(&knifeCreature);
 	orc2.setItemEquiped(&bladeCreature);
 	dragon.setItemEquiped(&fireCreature);
 
-	dungeon.addItem(&paper);
+
+	// Items in rooms
 	dungeon.addItem(&bone);
 	dungeon.addItem(&vault);
+	corridor.addItem(&knife);
 	aboveRoom.addItem(&blade);
 	library.addItem(&book);
-	library.addItem(&knife);
 
+
+	// Creatures in rooms
 	hall.addCreature(&orc1);
 	library.addCreature(&orc2);
 	dragonCave.addCreature(&dragon);
 
-	// Zork
+
+	// Zork (starting)
 	player.setActualRoom(&dungeon);
 
 	startingTime = 0;
@@ -99,11 +106,10 @@ int World::Iteration(InputOrder io)
 		break;
 
 	case InputOrder::GO:
-
 		cin >> input;
 		if (creaturePresentInTheRoom)
 		{
-			cout << "Zork should first kill the orc!" << endl;
+			cout << " Zork'd first kill that creature!" << endl;
 		}
 		else if (player.getActualRoom()->goTo(input) != NULL)
 		{
@@ -112,15 +118,19 @@ int World::Iteration(InputOrder io)
 
 			if (player.getActualRoom()->getName() == "freedome")
 			{
-				cout << "If you want to jail Zork again enter: restart" << endl;
-				cout << "But if you want to leave Zork seking other adventures enter: end." << endl;
+				cout << " If you want to jail Zork again enter: restart" << endl;
+				cout << " But if you want to leave Zork seeking other adventures enter: end." << endl;
 				while (1)
 				{
 					cin >> input;
 					if (input == "restart")
+					{
 						return 1;
+					}
 					else if (input == "end")
+					{
 						return 2;
+					}
 				}
 			}
 			if (player.getActualRoom()->isCreaturePresent())
@@ -134,15 +144,16 @@ int World::Iteration(InputOrder io)
 			}
 		}
 		else {
-			cout << "Zork would need a hammer to demolish that wall!" << endl;
+			cout << " Zork'd need a hammer to wreck that wall!" << endl;
 		}
+		cout << endl;
 		break;
 
 	case InputOrder::TAKE:
 		cin >> input;
 		if (creaturePresentInTheRoom)
 		{
-			cout << "Zork prefers to kill before the orc" << endl;
+			cout << " Zork prefers to kill before the orc" << endl;
 		}
 		else if (player.getActualRoom()->isItemPresent(input))
 		{
@@ -151,13 +162,17 @@ int World::Iteration(InputOrder io)
 			if (itemYouWantToTake->youCanTakeIt())
 			{
 				if (player.isItemInTheInventory(itemYouWantToTake->getName()))
-					cout << "Zork doesn't need it. The bag is quite heavy and Zork already has one.." << endl;
+				{
+					cout << " Zork doesn't need it. The bag is quite heavy and Zork already has one.." << endl;
+				}
 				else
 				{
-					if (itemYouWantToTake->isInsideAnItem()) {
+					if (itemYouWantToTake->isInsideAnItem())
+					{
 						itemYouWantToTake->getItemOutside()->takeItem();
 						itemYouWantToTake->takeOutsideItem();
 					}
+
 					player.getActualRoom()->removeItem(itemYouWantToTake);
 					player.addItem(itemYouWantToTake);
 					cout << " " << input << " taken" << endl;
@@ -165,38 +180,39 @@ int World::Iteration(InputOrder io)
 			}
 			else
 			{
-				cout << "Zork is not enough strong form that." << endl;
+				cout << " Zork isn't enough strong for that." << endl;
 			}
 		}
 		else
 		{
-			cout << "Yeah! You must be kiding Zork! Zork cannot see that." << endl;
+			cout << " Yeah! You must be kiding Zork! Zork cannot see that." << endl;
 		}
+		cout << endl;
 		break;
 
 	case InputOrder::DROP:
 		cin >> input;
 		if (creaturePresentInTheRoom)
 		{
-			cout << "Zork prefers to kill he orc first." << endl;
+			cout << " Zork prefers to kill he creature first." << endl;
 		}
 		else if ((player.isItemInTheInventory(input) && player.getItemEquiped() == NULL) ||
 			(player.isItemInTheInventory(input) && player.getItemEquiped()->getName() != input))
 		{
 			Item* itemYouWantToTake = player.getItemByName(input);
-
 			player.removeItem(itemYouWantToTake);
 			player.getActualRoom()->addItem(itemYouWantToTake);
 			cout << " " << input << " droped" << endl;
 		}
 		else if (player.getItemEquiped() == NULL || player.getItemEquiped()->getName() != input)
 		{
-			cout << "Zork cannot find that in the bag." << endl;
+			cout << " Zork cannot find that in the bag." << endl;
 		}
 		else
 		{
-			cout << "Eh! Zork needs it!." << endl;
+			cout << " Eh! Zork needs it!." << endl;
 		}
+		cout << endl;
 		break;
 
 	case InputOrder::INVENTORY:
@@ -206,6 +222,7 @@ int World::Iteration(InputOrder io)
 
 	case InputOrder::WATCH:
 		player.getActualRoom()->readRoom();
+		cout << endl;
 		break;
 
 	case InputOrder::READ:
@@ -218,7 +235,7 @@ int World::Iteration(InputOrder io)
 		cin >> input;
 		if (creaturePresentInTheRoom)
 		{
-			cout << "Zork prefers to kill first the orc." << endl;
+			cout << " Zork prefers to kill first the orc." << endl;
 		}
 		else if (player.getActualRoom()->isItemPresent(input))
 		{
@@ -226,7 +243,7 @@ int World::Iteration(InputOrder io)
 
 			if (itemYouWantToOpen->isOpened())
 			{
-				cout << "Do you know is already opened? Don't make Zork to work twice." << endl;
+				cout << " Do you know is already opened? Don't make Zork to work twice." << endl;
 			}
 			else
 			{
@@ -259,13 +276,13 @@ int World::Iteration(InputOrder io)
 					}
 				}
 				else {
-					cout << "Zork has to think more about this code..." << endl;
+					cout << " Zork has to think more about this code..." << endl;
 				}
 			}
 		}
 		else
 		{
-			cout << "Zork cannot open here, there're to much eyes around Zork." << endl;
+			cout << " Zork cannot open here, there're to much eyes around Zork." << endl;
 		}
 		cout << endl;
 		break;
@@ -274,16 +291,16 @@ int World::Iteration(InputOrder io)
 		cin >> input;
 		if (creaturePresentInTheRoom)
 		{
-			cout << "Zorc preferst to kill the orc first." << endl;
+			cout << " Zorc preferst to kill the creature first." << endl;
 		}
 		else if (player.getActualRoom()->isItemPresent(input))
 		{
 			Item* itemYouWantToClose = player.getActualRoom()->getItemByName(input);
 
 			if (!itemYouWantToClose->youCanOpenIt())
-				cout << "Zork cannot do hat with his." << endl;
+				cout << " Zork cannot do hat with his." << endl;
 			else if (!itemYouWantToClose->isOpened())
-				cout << "It's closed! Why do you want to make Zork to work twice?" << endl;
+				cout << " It isn't closed! Why do you want to make Zork to work twice?" << endl;
 			else
 			{
 				if (itemYouWantToClose->haveAnItemInside())
@@ -295,7 +312,7 @@ int World::Iteration(InputOrder io)
 			}
 		}
 		else
-			cout << "That is not here! Zork cannot imagine how to close if it isn't here..." << endl;
+			cout << " That's not here! Zork cannot imagine how to close if it isn't here..." << endl;
 		cout << endl;
 		break;
 
@@ -313,20 +330,21 @@ int World::Iteration(InputOrder io)
 	case InputOrder::ATTACK:
 		if (creaturePresentInTheRoom)
 		{
-			if (utils.playerWinsOrLoses("attack", player.getItemEquiped(), player.getActualRoom()->getCreature()->getItemEquiped(), clock() - startingTime)) {
+			if (utils.playerWinsOrLoses("attack", player.getItemEquiped(), player.getActualRoom()->getCreature()->getItemEquiped(), clock() - startingTime)) 
+			{
 				Item* dropItem = player.getActualRoom()->getCreature()->getItemEquiped();
 				creaturePresentInTheRoom = false;
 				player.getActualRoom()->creatureDies();
-				cout << "Yeah! Zork has killed him. Give me time to score a point in my arm." << endl;
-				cout << "Counting Zork's scars you can know the number of orcs killed by Zork. Now is 1, 2, 3, 4, 5,.. a lot!" << endl;
-				cout << "Zork can only count till 5." << endl;
-				cout << "This orc had a " << dropItem->getName() << "." << endl;
+				cout << " Yeah! Zork has killed him. Give me time to score a point in my arm." << endl;
+				cout << " Counting Zork's scars you can know the number of orcs killed by Zork. Now is 1, 2, 3, 4, 5,.. a lot!" << endl;
+				cout << " Zork can only count till 5." << endl;
+				cout << " This orc had a " << dropItem->getName() << "." << endl;
 			}
 			else
 			{
-				cout << "Zork can feel how the blood is flooding the ground..." << endl;
-				cout << "Zork has passed away. If you want him to rebirth as a Fenix, enter: restart." << endl;
-				cout << "If you want Zork buried (zombies are stinky), enter: end." << endl;
+				cout << " Zork can feel how the blood is flooding the ground..." << endl;
+				cout << " Zork has passed away. If you want him to rebirth as a Fenix, enter: restart." << endl;
+				cout << " If you want Zork buried (zombies are stinky), enter: end." << endl;
 				while (1)
 				{
 					cin >> input;
@@ -339,7 +357,7 @@ int World::Iteration(InputOrder io)
 		}
 		else
 		{
-			cout << "Zork wants to kill all orcs, but.. there is no orcs here..." << endl;
+			cout << " Zork wants to kill all orcs, but.. there is no orcs here..." << endl;
 		}
 		cout << endl;
 		break;
@@ -347,18 +365,19 @@ int World::Iteration(InputOrder io)
 	case InputOrder::THROW:
 		if (creaturePresentInTheRoom)
 		{
-			if (utils.playerWinsOrLoses("throw", player.getItemEquiped(), player.getActualRoom()->getCreature()->getItemEquiped(), clock() - startingTime)) {
+			if (utils.playerWinsOrLoses("throw", player.getItemEquiped(), player.getActualRoom()->getCreature()->getItemEquiped(), clock() - startingTime)) 
+			{
 				Item* dropItem = player.getActualRoom()->getCreature()->getItemEquiped();
 				creaturePresentInTheRoom = false;
 				player.getActualRoom()->creatureDies();
-				cout << "Yeah! One orc less" << endl;
-				cout << "This orc had a " << dropItem->getName() << "." << endl;
+				cout << " Yeah! One orc less" << endl;
+				cout << " This orc had a " << dropItem->getName() << "." << endl;
 			}
 			else
 			{
-				cout << "Zork can feell his blood flodding the ground..." << endl;
-				cout << "If Zork has to reborn enter: restart." << endl;
-				cout << "If the dead tings must be buried... enter: end." << endl;
+				cout << " Zork can feell his blood flodding the ground..." << endl;
+				cout << " If Zork has to reborn enter: restart." << endl;
+				cout << " If the dead tings must be buried... enter: end." << endl;
 				while (1)
 				{
 					cin >> input;
@@ -371,7 +390,7 @@ int World::Iteration(InputOrder io)
 		}
 		else
 		{
-			cout << "Zork loves killing orcs, but... Zork cannot find an orc here." << endl;
+			cout << " Zork loves killing orcs, but... Zork cannot find an orc here." << endl;
 		}
 		cout << endl;
 		break;
@@ -381,7 +400,7 @@ int World::Iteration(InputOrder io)
 		if (creaturePresentInTheRoom)
 		{
 			cin >> input; cin >> input;
-			cout << "Zork prefers to kill the orch before." << endl;
+			cout << " Zork prefers to kill the orc before." << endl;
 		}
 		else if ((player.isItemInTheInventory(input) && player.getItemEquiped() == NULL) ||
 			(player.isItemInTheInventory(input) && player.getItemEquiped()->getName() != input))
@@ -394,7 +413,7 @@ int World::Iteration(InputOrder io)
 				Item* itemWhereLeave = player.getActualRoom()->getItemByName(input);
 
 				if (!itemWhereLeave->youCanOpenIt())
-					cout << "Ha? Is that possible? You can not leave that inside " << itemWhereLeave->getName() << endl;
+					cout << " Ha? Is it possible? You can not leave that inside " << itemWhereLeave->getName() << endl;
 				else if (!itemWhereLeave->isOpened())
 					cout << " " << itemWhereLeave->getName() << " is closed." << endl;
 				else if (itemWhereLeave->haveAnItemInside())
@@ -405,26 +424,26 @@ int World::Iteration(InputOrder io)
 					itemWhereLeave->putItem(itemToLeave);
 					player.getActualRoom()->addItem(itemToLeave);
 					player.removeItem(itemToLeave);
-					cout << "Zork has putted " << itemToLeave->getName() << " inside " << itemWhereLeave->getName() << endl;
+					cout << " Zork has putted " << itemToLeave->getName() << " inside " << itemWhereLeave->getName() << endl;
 				}
 			}
 		}
 		else if (player.getItemEquiped() == NULL || player.getItemEquiped()->getName() != input)
 		{
 			cin >> input; cin >> input;
-			cout << "Zork cannot find that thing in the bag." << endl;
+			cout << " Zork cannot find it in the bag... Are you sure Zork got it?" << endl;
 		}
 		else
 		{
 			cin >> input; cin >> input;
-			cout << "Eh! Zork needs it!" << endl;
+			cout << " Eh! Zork needs it!" << endl;
 		}
 		cout << endl;
 		break;
 
 	default:
 		cin >> input;
-		cout << "Zork cannot undersand you... Zork will have to study your lenguage." << endl;
+		cout << " Zork cannot undersand you... Zork will have to study your lenguage." << endl;
 		cout << endl;
 		break;
 

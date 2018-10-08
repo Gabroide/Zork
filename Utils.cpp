@@ -14,20 +14,36 @@ bool Utils::playerWinsOrLoses(string action, Item* playerItem, Item* creatureIte
 {
 	if (timeAtRoom >= 10000)
 	{
-		if (creatureItem->getName() == "blade")
-			cout << "Orc stabed you with his blade." << endl;
+		if (creatureItem->getName() == "fire")
+		{
+			cout << " NighDead is devouring Zork.. After it he will be hungry. you'ld RUN!!." << endl;
+		}
+		else if (creatureItem->getName() == "blade")
+		{
+			cout << " Orc stabed you with his blade." << endl;
+		}
 		else
-			cout << "The orc has throw you his knife." << endl;
-		return false;
+		{
+			cout << " The orc has throw you his knife." << endl;
+		}
+	return false;
 	}
 
 	else if (playerItem == NULL)
 	{
-		cout << "Zork has no weapon. Zork's hands are lke a treasure, I won't use them against orcs." << endl;
-		if (creatureItem->getName() == "blade")
-			cout << "The orc has stabbed with his blade." << endl;
+		cout << " Zork has no weapon. Zork's hands are lke a treasure, I won't use them against orcs." << endl;
+		if (creatureItem->getName() == "fire")
+		{
+			cout << " Can you smell Zork's burnt flesh? NightDead has burnt Zork." << endl;
+		}
+		else if (creatureItem->getName() == "blade")
+		{
+			cout << " The orc has stabbed with his blade." << endl;
+		}
 		else
-			cout << "The orc has stabbed Zorc." << endl;
+		{
+			cout << " The orc has stabbed Zorc." << endl;
+		}
 		return false;
 	}
 
@@ -35,67 +51,80 @@ bool Utils::playerWinsOrLoses(string action, Item* playerItem, Item* creatureIte
 	{
 		if (action == "throw")
 		{
-			cout << "Throw a bonw? May be Zork will kill the orc beacause he won't be able to stop laughing" << endl;
+			cout << " Throw a bonw? May be Zork will kill the orc beacause he won't be able to stop laughing" << endl;
 			srand(time(NULL));
 			if ((rand() % 10 + 0.5) <= 5)
 			{
-				cout << "Incredible! Zork has throw the bine to his head and the orc was without helmet." << endl;
+				cout << " Incredible! Zork has throw the bone to his head and the orc was without helmet." << endl;
 				return true;
 			}
 			else
 			{
-				cout << "The orc has catch the bone with his hand smiling. Now he is coming to kill Zork with his weapon." << endl;
+				cout << " The orc has catch the bone with his hand smiling. Now he is coming to kill Zork with his weapon." << endl;
 				return false;
 			}
 		}
-		
 	}
 
 	else if (playerItem->getName() == "knife")
 	{
 		if (action == "throw")
 		{
-			cout << "Zork throwed the knive to the creature..." << endl;
+			cout << " Zork throwed the knive to the creature..." << endl;
 			srand(time(NULL));
 			if ((rand() % 10 + 1) <= 5)
 			{
-				cout << "Zork is a great knife launcher! The orc ihas been killed." << endl;
+				cout << " Zork's a great knife launcher! The orc has been killed." << endl;
 				return true;
 			}
 			else
 			{
-				cout << "Zork needs to practice more with knifes... Now the orc is quite angry and is running towards Zork to kill him." << endl;
+				cout << " Zork needs to practice more with knifes... Now the orc is quite angry and is running towards Zork to kill him." << endl;
 				return false;
 			}
 		}
 		else
 		{
-			if (creatureItem->getName() == "blade")
+			if (creatureItem->getName() == "fire")
 			{
-				cout << "Zork knife is very short, the orc's lade is longer..." << endl;
+				cout << " Zork knife is very short, NightDead is a dragon!!!" << endl;
+				return false;
+			}
+			else if (creatureItem->getName() == "blade")
+			{
+				cout << " Zork knife is very short, the orc's blade is longer..." << endl;
 				return false;
 			}
 			else
 			{
-				cout << "Zorkk walks in silence and stab cut the orc neck" << endl;
+				cout << "Zork walks in silence and stab cut creature's neck" << endl;
 				return true;
 			}
 		}
+		return false;
 	}
 	else
 	{
 		if (action == "throw")
 		{
-			cout << "Ha? Zorks knows how to throw knifes, but blades..." << endl;
-			if (creatureItem->getName() == "blade")
-				cout << "The orc uses his blade against you." << endl;
+			cout << " Ha? Zorks knows how to throw knifes, but blades..." << endl;
+			if (creatureItem->getName() == "fire")
+			{
+				cout << " NightDead burnt Zork!" << endl;
+			}
+			else if (creatureItem->getName() == "blade")
+			{
+				cout << " The orc has killed Zork with a blade." << endl;
+			}
 			else
-				cout << "The orc stabs Zork with his knife." << endl;
+			{
+				cout << " Orc stabs Zork with a knife." << endl;
+			}
 			return false;
 		}
 		else
 		{
-			cout << "Zorks should use the blade. Zork is a great fighter with Orc's Widow.." << endl;
+			cout << " Zork'd use the blade. Zork's a great fighter with Orc's Widow." << endl;
 			return true;
 		}
 	}

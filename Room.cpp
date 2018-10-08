@@ -61,15 +61,15 @@ Room* Room::goTo(string direction)
 
 void Room::readRoom() const
 {
-	cout << "<-- " << story << endl;
+	cout << " " << story << endl;
 	for (int i = 0; i < directions.size(); ++i)
 	{
 		if (directions[i].direction == "up" || directions[i].direction == "down")
-			cout << "<-- You can see " << directions[i].definition << " going " << directions[i].direction << ". ";
+			cout << " Zork see " << directions[i].definition << " going " << directions[i].direction << ". ";
 		else
-			cout << "<-- At the " << directions[i].direction << " you can see " << directions[i].definition << ". ";
+			cout << " At " << directions[i].direction << " Zork can see " << directions[i].definition << ". ";
 		if (!directions[i].opened)
-			cout << "It seems that the door is closed.";
+			cout << " It seems that the door is closed.";
 		cout << endl;
 	}
 	if (!listOfItemsInRoom.empty())
@@ -97,7 +97,11 @@ void Room::readRoom() const
 		}
 		if (creatureInTheRoom->getItemEquiped()->getName() == "blade")
 		{
-			cout << " The orc has a blade! But a bladeis just a long knife in the darkness..." << endl;
+			cout << " The orc has a blade! But a blade is just a long knife in the darkness..." << endl;
+		}
+		if (creatureInTheRoom->getItemEquiped()->getName() == "fire")
+		{
+			cout << " It is NightDead! Zork don't want to get a human antorch." << endl;
 		}
 	}
 }

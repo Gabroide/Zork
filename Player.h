@@ -11,14 +11,12 @@ private:
 
 public:
 
-	// Players
-
+	// Player
 	Player();
 	Player(Room* actualRoom);
 	~Player();
 
 	// Asking
-
 	Room* getActualRoom() const;
 	bool isItemInTheInventory(string itemName) const;
 	Item* getItemEquiped() const;
@@ -27,7 +25,6 @@ public:
 	void readInventory() const;
 
 	// Modifying
-
 	void setActualRoom(Room* actualRoom);
 	void addItem(Item* item);
 	void removeItem(Item* item);
