@@ -137,7 +137,8 @@ the answer can be from a year to a name.  part from run you will have to think.<
 <br/>
 
 <h3>Running example</h3>
-![Alt text] (image.png "Zork's screenshot")
+
+![Alt text] (imagen.png "Zork's screenshot")
 
 <h3>Problems deected</h3>
 <p>A bug has been detected while testing the game. For some reason, after playing and giving some orders o Zork, Zork doesn't understand the orders, but after a few orders
