@@ -6,9 +6,9 @@
 
 <p>To be able to use this text adventure game you will need</p>
 
-<h3>Prerequisites</3>
+<h3>Prerequisites</h3>
 <ol>
-	<li>A laptop and/or compuer</li>
+	<li>A laptop and/or computer</li>
 	<li>Visual Studio 2017</li>
 </ol>
 
@@ -138,8 +138,12 @@ the answer can be from a year to a name.  part from run you will have to think.<
 
 <h3>Screenshot</h3>
 
-![Alt text] (https://github.com/Gabroide/Zork/blob/master/imagen.png "Zork's screenshot")
+<div align="center"> 
+     <img src="imagen.png" alt="Zork's screeenshot" title="Zork!"</img> 
+ </div>
 
+<br/>
+ 
 <h3>Problems deected</h3>
 <p>A bug has been detected while testing the game. For some reason, after playing and giving some orders o Zork, Zork doesn't understand the orders, but after a few orders
 more Zork starts to undersand orders again. I'm trying to find in which part of the loop is the problem.</p>
