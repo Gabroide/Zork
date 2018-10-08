@@ -115,7 +115,7 @@ the answer can be from a year to a name.  part from run you will have to think.<
 
 <br/>
 
-<h3>Wepons</h3>
+<h3>Weapons</h3>
 <p>These are the weapons to kill orcs:</p>
 <ol>
 	<li><u>knife:</u> It can be thrown or use to attack orc.</li>
@@ -136,9 +136,9 @@ the answer can be from a year to a name.  part from run you will have to think.<
 
 <br/>
 
-<h3>Running example</h3>
+<h3>Screenshot</h3>
 
-![Alt text] (imagen.png "Zork's screenshot")
+![Alt text] (https://github.com/Gabroide/Zork/blob/master/imagen.png "Zork's screenshot")
 
 <h3>Problems deected</h3>
 <p>A bug has been detected while testing the game. For some reason, after playing and giving some orders o Zork, Zork doesn't understand the orders, but after a few orders
