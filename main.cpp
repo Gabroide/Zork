@@ -14,6 +14,7 @@ int main()
 	cout << " Please, help me to scape from here and kill NightDead!" << endl;
 	cout << endl;
 	cout << endl;
+	cout << endl;
 
 
 	// Starting the world

@@ -30,7 +30,7 @@ void World::Init()
 	bone = Item("bone", " Zork can throw it to an enemy but... Zork doesn't know if it will kill a creature.", true);
 	knife = Item("knife", " Zork can throw it to an enemy but... Zork hasn't practise for long time you can miss the hit.", true);
 	blade = Item("blade", " Yeah! Orcs' Widow! The best blade on Earth.", true);
-	paper = Item("map", " It's the map of the caves. It says the exit is at the east. It also says Zork has to cross NightDead chambre in his way.", true);
+	paper = Item("map", " Cave's exit is on the west, but before You have to kill NightDead.", true);
 	vault = Item("vault", " Code (XX-XX-XX) to open the vault. Clue: 01-02-03-05-...", false, true, false, true, &paper, true, "07-11-13");
 	key = Item("key", " A rusted old key. Time ago you where able to read the inscription.", true);
 	book = Item("book", " A gnawed old book. It used to have papers but now... Zork only can see a weird lock. Code (X.X.X.). Clue: Tolkien", false, true, false, true, &key, true, "J.R.R.");
