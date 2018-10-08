@@ -101,7 +101,7 @@ the answer can be from a year to a name.  part from run you will have to think.<
 </ol>
 
 <h3>Combinig verbs & nouns</h3>
-<p>To make Zork move to the north or attack an orch fpr example, you have to combine a verb plus a noun, here you have some eamples about how to do it:</p>
+<p>To make Zork move to the north or attack an orc for example, you have to combine a verb plus a noun, here you have some eamples about how to do it:</p>
 <ol>
 	<li><b>open book/b>: Zork will open the book.<li>
 	<li<b>read map</b>: Zork will read the map.</li>
