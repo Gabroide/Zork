@@ -1,0 +1,384 @@
+/******************************************************************************/
+/*                                  CLEANING                                  */
+/******************************************************************************/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/******************************************************************************/
+/*                                  GENERAL                                   */
+/******************************************************************************/
+body{
+    font-family: Sans-serif, Arial;
+    font-size: 14pt;
+    background: white url("../img/back.png") repeat center;
+    width: 80vw;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    color: #222222;
+}
+
+a:hover{
+    font-weight: bolder;
+
+}
+
+.showIco{
+  height: 2vh;
+  width: 1vw;
+}
+
+h1{
+font-size: 40pt;
+}
+
+h2{
+    font-size: 22pt;
+    color: #000078;
+    margin: 2vh 0 2vh 0;
+}
+
+h3{
+    color: #000078;
+}
+
+h4{
+  margin: 2vh 0 0 0;
+}
+
+ul{
+    list-style: none;
+}
+
+abbr{
+    text-decoration: none;
+}
+
+/******************************************************************************/
+/*                                  HEADER                                    */
+/******************************************************************************/
+
+header{
+    margin: 0 0 0 0;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+    background: lightgrey;
+}
+
+#pre-menu{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1vh 0 0 75vw;
+}
+
+#languages ul{
+    text-align: center;
+}
+
+#languages ul li{
+    display: inline;
+}
+
+#languages ul li a{
+    font-size: 8pt;
+}
+
+#languages ul li a:hover{
+    font-size: 2vh;
+}
+
+#logo img{
+    width: 30vw;
+    margin: 0 10vw 2vh 0;
+}
+
+#menu{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+
+nav{
+    padding: 15vh 0 0 0;
+}
+
+nav ul{
+    text-align: center;
+}
+
+nav ul li{
+  display:  inline;
+  font-size: 15pt;//1vw;
+}
+
+#breadcrumbs ul li, #submenu ul li{
+    display:  inline;
+    font-size: 12pt;//1vw;
+}
+
+nav ul li a, #breadcrumbs ul li a, #submenu ul li a{
+    padding: 0 1vw 0 1vw;
+    font-weight: bold;
+    color: #000078;
+}
+
+#breadcrumbs{
+    margin: 0 0 2vh 0;
+}
+
+#actual-page{
+    border-bottom: solid black thin;
+    font-weight: bolde;
+}
+
+nav ul li a:hover{
+    color: #000078;
+    background: #D0D0D0;
+    font-size: 14pt;
+    padding: 0 0.5vw 0 0.5vw;
+}
+
+/******************************************************************************/
+/*                                  FOOTERS                                   */
+/******************************************************************************/
+
+footer{
+    margin: 0 10vw 0 10vw;
+    width: 80vw;
+
+    border-top: solid black thin;
+
+    background: #D0D0D0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 9pt;
+}
+
+#contact{
+     flex: 2 5vw;
+     margin: 2vh 0 0 0;
+     padding: 2vh 4vw 2vh 4vw;
+}
+
+#contact a span{
+    //width: 5vw;
+    margin: 1vh 1vw 0 0;
+}
+
+#contact p{
+    padding: 1vh 0 0 0;
+}
+
+#footer_form{
+     flex: 3 20vw;
+     padding: 2vh 10vw 2vh 10vw;
+     margin: 2vh 0 0 0;
+     border-left: 0.1vh solid black;
+     border-right: 0.1vh solid black;
+}
+
+#footer_form p{
+     font-weight: bold;
+}
+
+#footer_form li{
+    margin: 1vh 0 0 0;
+}
+
+#info{
+    flex: 5 5vw;
+    margin: 2vh 0 0 0;
+}
+
+#info img{
+    width: 4vw;
+    float: left;
+    padding: 2vh 1vw 1vh 1vw;
+}
+
+#info div{
+    padding: 0.5vh 0 0 0;
+}
+
+#info p{
+    padding: 0.5vh 0 0 0;
+}
+
+#credits{
+    padding: 1vw 2vw 1vw 2vw;
+}
+
+.fa-phone, .fa-envelope{
+    margin: 0 0.5vw 0 0;
+}
+
+.fa-twitter{
+    color: blue;
+}
+
+.fa-facebook{
+    color: blue;
+}
+
+.fa-youtube{
+    color: red;
+}
+
+.fa-instagram{
+    color: orange;
+}
+
+/******************************************************************************/
+/*                               ASIDE.HTML                                   */
+/******************************************************************************/
+aside{
+  float: right;
+  width: 28vw;
+  margin: 0 0 0 2vw;
+  font-size: 12pt;
+}
+
+aside .separator{
+  border-top-style:solid;
+  padding: 2vh 0;
+}
+
+h3{
+  padding: 2vh 0;
+}
+
+iframe{
+  padding: 2vh 0;s
+}
+
+.bigImg{
+  margin: 2vh 0;
+}
+
+.socialMedia a img{
+  width: 62px;
+  height: 62px;
+  margin: 1vh;
+}
+
+.socialMedia a img:hover{
+  width: 80px;
+  height: 80px;
+}
+/******************************************************************************/
+/*                               INDEX.HTML                                   */
+/******************************************************************************/
+
+article{
+    margin-top: 30vh;
+}
+
+.content{
+  float: left;
+  width: 50vw;
+}
+
+.center{
+  margin: auto;
+  display: block;
+  width: 40vw;
+}
+
+.center2{
+  margin: auto;
+  display: block;
+  width: 20vw;
+}
+
+#org{
+
+}
+
+section div img{
+    padding: 3vh 0;
+}
+
+#lib{
+  padding: 2vh 3vw;
+  columns: 4;
+  -webkit-columns: 4;
+  -moz-columns: 4;
+  list-style: disc;
+}
+
+/******************************************************************************/
+/*                               GANTT                                        */
+/******************************************************************************/
+/*
+table th:first-child {
+  width: 150px;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0)
+  }
+  20%, 60% {
+    transform: rotate(-25deg)
+  }
+  40%, 80% {
+    transform: rotate(10deg).
+  }
+}
+
+@media (max-width:500px) {
+  .github-corner:hover .octo-arm {
+    animation: none
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+  }
+}
+*/
+
+/******************************************************************************/
+/*                               MEDIA                                        */
+/******************************************************************************/
+
+.showVS1, #showGVD, #showVisionDoc, #showVisionDemo{
+    display:none;
+    clear: both;
+}
+
+#mediAside h2{
+  margin-bottom: 0;
+}
+
+#mediAside p{
+  margin-left: 3vw;
+}
+
+#mediAside li{
+  margin-top: 1vh;
+}
+
+#mediAside ul{
+  margin-bottom: 3vh;
+}
+
+#mediAside section{
+  margin-top: 2vh;
+}
+
+#showVisionDemo img{
+    margin-left: 10vw;
+}
+
+// https://cybmeta.com/anatomia-de-un-blog-en-html5
+//https://blog.openalfa.com/como-crear-listas-desplegables-en-una-pagina-web

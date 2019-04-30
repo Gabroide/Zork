@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <title>Fracta Puppy | Media</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="../img/ico/favicon.ico">
+
+        <link href="../css/styles.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $("#VS1").on( "click", function() {
+              $('.showVS1').toggle(1000); //muestro mediante id
+            });
+            $(".graveyard").on( "click", function() {
+              $('#showGraveyard').toggle(1000); //muestro mediante id
+            });
+            $(".graveyard2").on( "click", function() {
+              $('#showGraveyard2').toggle(1000); //muestro mediante id
+            });
+          });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <div id="pre-menu">
+                <div id="languages">
+                    <ul>
+                        <li><a  id="es" href="#" title="Página en castellano">ES</a></li>
+                        <li>|</li>
+                        <li><a href="../cat/index.html" title="Pàgina en català">CA</a></li>
+                        <li>|</li>
+                        <li><a href="../en/index.html" title="Web in english">EN</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="menu">
+                <a id="logo" href="../index.html" title="Enlaza con la página principal">
+                    <picture>
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="../img/logo2.png" alt="Logo de Fractal Puppy">
+                        <img src="../img/logo.png" alt="Logo de Fractal Puppy">
+                   </picture>
+                </a>
+
+                <nav>
+                    <ul>
+                        <li><a href="../es/neta.html" title="Enlaza con la página de Proyecto Neta">
+                          <img class="showIco" src="../img/ico/logoNeta.png">
+                          Neta
+                        </a></li>
+                        <li><a href="../es/downloads.html" title="Enlaza con la página de Descargas">
+                          <img class="showIco" src="../img/ico/download.png">
+                          Descargas
+                        </a></li>
+                        <li><a id="open" href="#" title="Enlaza con media">
+                          <img class="showIco" src="../img/ico/ico5.png">
+                          Media
+                        </a></li>
+                        <li><a href="#" title="Enlaza con el Blog">
+                          <img class="showIco" src="../img/ico/ico4.png">
+                          Blog / Diario
+                        </a></li>
+                        <li><a href="https://github.com/fractal-puppy/Engine/wiki" title="Enlaza con la Wiki" target="_blank">
+                          <img class="showIco" src="../img/ico/ico6.png">
+                          Wiki
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <article>
+          <aside id="mediAside">
+            <h2 id="VS1" onclick="change()">Vertical Slide 1</h2>
+            <p>(Abril 2019)</p>
+            <ul class="showVS1">
+                <li><a class="graveyard" onclick="change()">Graveyard</a></li>
+                <li><a class="graveyard2" onclick="change()">Graveyard 2</a></li>
+            </ul>
+
+            <h2 id="VS2" onclick="change()">Vertical Slide 2</h2>
+            <p>(Mayo 2019)</p>
+            <ul class="showVS2">
+                <li><a class="" onclick="change()">Graveyard</a></li>
+                <li><a class="" onclick="change()">Graveyard 2</a></li>
+            </ul>
+          </aside>
+
+            <section class="content">
+              <h1>Media</h1>
+                <p>
+                  Aquí encontraréis disponibles múltiples vídeos qie cpntienen los tests
+                  que se han realizado para las diferentes Vertical Slide. Comparando los
+                  diferententes vídeos se puede ver como ha ido evolucionando el juego desde
+                  su concepción donde el arte no está muy presente, hasta los tests finales donde
+                  el arte ya está presente en todo su esplendor y la jugabilidad del juego <head>
+                  aumentado considerablemente.
+                </p>
+              </div>
+            </section>
+            <section class="showVS1" id="mediaVS1">
+                <h2>Vertical Slide 1</h2>
+                <div id="showGraveyard">
+                  <h3>Graveyard (Level Test 1)</h3>
+                  <iframe  class="video" src="https://www.youtube.com/embed/CWPKZnC0KKM" frameborder="0" allow="autoplay; picture-in-picture" allowfullscreen>
+                  </iframe>
+                  <p>
+                    Primer test de nivel realizado con el motor de Unity. En este test se buscaba estudiar
+                    la jugabilidad del nivel y ver sus dimesiones. Por eso hay texturas por fijar y la iluminación
+                    no es la que se podrá al final. Se trata de un esquema para ver l a jugabilidad del nivel.
+                  </p>
+                </div>
+
+                <div id="showGraveyard2">
+                  <h3>Graveyard (Level Test 1) <i lang="es">Alta velocidad</i></h3>
+                  <iframe class="video" src="https://www.youtube.com/embed/BzyOi-O4Kec" frameborder="0" allow="autoplay; picture-in-picture" allowfullscreen>
+                  </iframe>
+                  <p>
+                    Primer test de nivel realizado con el motor de Unity. En este caso se ha duplicado la velocidad
+                    del juego para mostrar todo el nivel de una forma más rápida.
+                  </p>
+                </div>
+
+                <div id="showVS1Docuent">
+                  <h3>Vertical Slide 1 Document</h3>
+                  <iframe src="https://drive.google.com/file/d/1LrB18nyqq2pG1RWDX3JYTIS8O4Rh46Re/preview"
+                  width="900" height="600"></iframe>
+                  <a href="">Descargar docuento</a>
+                </div>
+              </section>
+        </article>
+      </body>
+      </html>

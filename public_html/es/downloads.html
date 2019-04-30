@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <title>Fracta Puppy | Media</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="../img/ico/favicon.ico">
+
+        <link href="../css/styles.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $("#VS1").on( "click", function() {
+              $('.showVS1').toggle(1000); //muestro mediante id
+            });
+            $(".GVD").on( "click", function() {
+              $('#showGVD').toggle(1000); //muestro mediante id
+            });
+            $(".VisionDoc").on( "click", function() {
+              $('#showVisionDoc').toggle(1000); //muestro mediante id
+            });
+            $(".VisionDemo").on( "click", function() {
+              $('#showVisionDemo').toggle(1000); //muestro mediante id
+            });
+          });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <div id="pre-menu">
+                <div id="languages">
+                    <ul>
+                        <li><a  id="es" href="#" title="Página en castellano">ES</a></li>
+                        <li>|</li>
+                        <li><a href="../cat/index.html" title="Pàgina en català">CA</a></li>
+                        <li>|</li>
+                        <li><a href="../en/index.html" title="Web in english">EN</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="menu">
+                <a id="logo" href="../index.html" title="Enlaza con la página principal">
+                    <picture>
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="../img/logo2.png" alt="Logo de Fractal Puppy">
+                        <img src="../img/logo.png" alt="Logo de Fractal Puppy">
+                   </picture>
+                </a>
+
+                <nav>
+                    <ul>
+                        <li><a href="../es/neta.html" title="Enlaza con la página de Proyecto Neta">
+                          <img class="showIco" src="../img/ico/logoNeta.png">
+                          Neta
+                        </a></li>
+                        <li><a href="../es/downloads.html" title="Enlaza con la página de Descargas">
+                          <img class="showIco" src="../img/ico/download.png">
+                          Descargas
+                        </a></li>
+                        <li><a id="open" href="#" title="Enlaza con media">
+                          <img class="showIco" src="../img/ico/ico5.png">
+                          Media
+                        </a></li>
+                        <li><a href="#" title="Enlaza con el Blog">
+                          <img class="showIco" src="../img/ico/ico4.png">
+                          Blog / Diario
+                        </a></li>
+                        <li><a href="https://github.com/fractal-puppy/Engine/wiki" title="Enlaza con la Wiki" target="_blank">
+                          <img class="showIco" src="../img/ico/ico6.png">
+                          Wiki
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <article>
+          <aside id="mediAside">
+            <h2 id="VS1" onclick="change()">Vertical Slide 1</h2>
+            <p>(Abril 2019)</p>
+            <ul class="showVS1">
+                <li><a class="GVD" onclick="change()">Game Vision Document</a></li>
+                <li><a class="VisionDoc" onclick="change()">Vertical Slide 1</a><li>
+                <li><a class="VisionDemo" onclick="change()">Vertical Slide 1 Demo</a><li>
+            </ul>
+          </aside>
+
+            <section class="content">
+              <h1>Descargas</h1>
+                <p>
+                  Aquí encontraréis disponibles múltiples documentos y ficheros que podéis descargar directamente.
+                  Como todo el material de la web el material que se descarga está sujeto a licencia
+                  <a href="es/MIT.html">MIT</a>. Si se desea más información sobre las licendcias a las que están sujetas
+                  las descargas de la web, se puede consultar la información en el siguiente
+                  <a href="es/licencias.html">enlace</a>.
+                </p>
+              </div>
+            </section>
+            <section class="showVS1" id="mediaVS1">
+                <h2>Vertical Slide 1</h2>
+                <div id="showGVD">
+                  <h3 lang="en">Game Vision Document</h3>
+                  <iframe src="https://drive.google.com/file/d/1LrB18nyqq2pG1RWDX3JYTIS8O4Rh46Re/preview"
+                  width="900" height="450"></iframe></br>
+                  <a href="../doc/vision.pdf" download="GVD (v. 1.0).pdf">
+                    Descargar <abbr lang="em" title="Game Vision Document">
+                    GVD
+                    </abbr>
+                  </a>
+                </div>
+
+                <div id="showVisionDoc">
+                  <h3 lang="en">Verticl Slide 1</h3>
+                  <iframe src="https://drive.google.com/file/d/1GdoeVK9ZoApDYirZkKPbExQwva78ihUR/preview"
+                  width="900" height="450"></iframe></br>
+                  <a href="../doc/vs1.pdf" download="Vertical Slide (v. 1.0).pdf">Descargar</a>
+                    GVD
+                  </a>
+                </div>
+
+                <div id="showVisionDemo">
+                  <h3 lang="en">Demo Verticl Slide 1</h3>
+                  <p>
+                    En el siguiente enlace podréis descargar la demo de Neta creada para la <a lang="en">
+                    Vertical Slide 1</a>.
+                    <a href="https://github.com/fractal-puppy/Engine/releases/tag/0.5" title="Enlace de descarga de la demo">
+                      <img src="../img/neta.png"></img>
+                    </a>
+                  </p>
+                  <a href="../doc/vs1.pdf" download="Vertical Slide (v. 1.0).pdf">Descargar</a>
+                    GVD
+                  </a>
+                </div>
+              </section>
+        </article>
+      </body>
+      </html>

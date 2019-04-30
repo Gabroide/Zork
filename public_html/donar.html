@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>LAGaEC | Donar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    </head>
+    <body>
+        <header>
+            <div id="pre-menu">
+                <a id="donaciones" href="donaciones.html" title="Enlaza con la página de donaciones">
+                    ¡Haz tu donación!
+                </a>
+                <div id="languages">
+                    <ul>
+                        <li><a  id="es" href="#" title="Página en castellano">ES</a></li>
+                        <li>|</li>
+                        <li><a href="#" title="Pàgina en català">CA</a></li>
+                        <li>|</li>
+                        <li><a href="#" title="Web in english">EN</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="menu">
+                <a id="logo" href="index-html" title="Enlaza con la página principal">
+                    <picture>
+                        <source 
+                            media="(max-width: 600px)" 
+                            srcset="img/ico.png">
+                        <img src="img/logo.png" alt="Logo de LAGaEC">
+                   </picture>
+                </a>
+            
+                <nav>
+                    <ul>
+                        <li><a href="#" title="Enlaza con la página de Coleción">Colección</a></li>
+                        <li><a href="exposiciones.html" title="Enlaza con la página de exposiciones">Exposiciones</a></li>
+                        <li><a href="#" title="Enlaza con la página de actividades">Actividades</a></li>
+                        <li><a href="#" title="Enlaza con la Revista">Revista</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div id="breadcrumbs">
+                    <ul>
+                        <li><a href="index.html" title="Enlaza con la página de inicio">Inicio</a></li>
+                        <li>>>Haz un donativo</li>
+                    </ul>
+                </div>
+        </header>
+        
+        <article id="expo-detalle">
+            <section>
+                <div id="donar">
+                    <h2>Donación en línea</h2>
+                </div>
+                <div id="donativos">
+                    <div id="cita">
+                        <cite>
+                            La protección y promoción de la diversidad cultural y 
+                            natural es uno de los grandes desafíos del siglo XXI. A 
+                            este respecto, los museos y colecciones son medios 
+                            primordiales para salvaguardar los testimonios 
+                            materiales e inmateriales de la naturaleza y las 
+                            culturas humanas.
+                        </cite>
+                        <p>
+                            <abbr class="aut" title="Organización de las Naciones Unidas
+                            para la Educación, la Ciencia y la Cultura">
+                                UNESCO
+                            </abbr>
+                            , 17 de noviembre de 2015
+                        </p>
+                    </div>
+                    
+                    <form>
+                        <p><strong><abbr title="La GaleríaEcléctica">LAGaEC</abbr></strong>
+                            tiene como objetivo la difusión de la cultura y se sostiene en
+                            base a donaciones de personas que comparten nuestro 
+                            interés por las manifestaciones culturales de todo tipo.
+                        </p>
+                        <p id="thanks">Gracias por tu apoyo.</p>
+                        <fieldset id="quantity">
+                            <ul>
+                                <li>
+                                    <p  class="title">
+                                        Cantidad del donativo (EUR)
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <label for="unico">
+                                                Una única vez
+                                            </label>
+                                            <input id="unico" type="radio" value="unico" 
+                                                   title="Dona una sola vez" name="tiempo" 
+                                                   autofocus required/>
+                                            <label for="mensual">
+                                                Mensual
+                                            </label>
+                                            <input id="mensual" type="radio" value="mensual"
+                                                   title="Donación mensual" name="tiempo" 
+                                                   required/>
+                                        </li>
+                                        <li>
+                                            <label for="cinco">
+                                                5 &euro;
+                                            </label>
+                                            <input id="cinco" type="radio" value="5" 
+                                                   title="Donar cincoeuros" name="cantida"
+                                                   required/>
+                                            <label for="diez">
+                                                10 &euro;
+                                            </label>
+                                            <input id="diez" type="radio" value="10" 
+                                                   title="Donar diez euros" name="cantidad"
+                                                   required/>
+                                            <label for="veinte">
+                                                20 &euro;
+                                            </label>
+                                            <input id="veinte" type="radio" value="20" 
+                                                   title="Donar veinte euros" name="cantidad"
+                                                   required/>
+                                            <label for="cuarenta">
+                                                40 &euro;
+                                            </label>
+                                            <input id="cuarenta" type="radio" value="40" 
+                                                   title="Donar cuarenta euros" name="cantidad"
+                                                   required/>
+                                            <label for="cincuenta">
+                                                50 &euro;
+                                            </label>
+                                            <input id="cincuenta" type="radio" 
+                                                   value="50" title="Donar cincuenta euros"
+                                                   name="cantidad" required/>
+                                            <label for="cien">
+                                                100 &euro;
+                                            </label>
+                                            <input id="cien" type="radio" value="100" 
+                                                   title="Donar cien euros" name="cantidad"
+                                                   required/>
+                                        </li>
+                                        <li>
+                                            <label for="otra_cantidad">
+                                                Otra cantidad
+                                            </label>
+                                            <input name="cantidad" id="otra_cantidad" 
+                                                   type="radio"/>
+                                        </li>
+                                        <li>
+                                            <input class="otra_cantidad" id="valor_cantidad" type="number" 
+                                                   min="1.00" value="0.00" step="0.01"/>&euro;
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset id="facturacion">
+                            <ul>
+                                <li id="bilt">
+                                    <p  class="title">
+                                        Datos de facturación
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <label for="email">
+                                                Dirección de correo electrónico
+                                            </label>
+                                            <input id="email" type="email" 
+                                                   placeholder="nombre@nombre.com" required/>
+                                        </li>
+                                        <li>
+                                            <label for="name">Nombre</label>
+                                            <input id="name" type="text" placeholder="Nombre"
+                                                   required/>
+                                        </li>
+                                        <li>
+                                            <label for="surename">Apellidos</label>
+                                            <input id="surename" type="text" 
+                                                   placeholder="Apellido" required/>
+                                        </li>
+                                        <li>
+                                            <label for="addres">Dirección postal</label>
+                                            <input id="addres" type="text" 
+                                                placeholder="Dirección, 0" required/>
+                                        </li>
+                                        <li>
+                                            <label for="phone">Teléfono</label>
+                                            <input id="phone" type="tel"
+                                                   placeholder="123456789" pattern="[0-9]{9}" required/>
+                                        </li>
+                                    </ul>
+                                <li>
+                                
+                                <li id="payment">
+                                    <p class="title">
+                                        Datos de pago
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <label for="card">Número de la tarjeta</label>
+                                            <input id="card" type="number"
+                                                   placeholder="0000 0000 0000 0000"
+                                                   required/>
+                                        </li>
+                                        <li> 
+                                            <label for="expirit">Data de expiración (MM/AA)</label>
+                                            <input id="expirit" type="date" required/>
+                                        </li>
+                                        <li>
+                                            <label for="cv">Código de verificación</label>
+                                            <input id="cv" type="number"
+                                                  placeholder="123" required/>
+                                        </li>
+                                        <li id="agreement">
+                                            <label for="anonym" class="accept">
+                                                <input id="anonym" name="anonym" type="checkbox" 
+                                                    title="Debe seleccionar la casilla" required/>
+                                                    Hago este donativo de manera anónima
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="policy" class="accept">
+                                                <input id="policy" name="policy" type="checkbox" title="Debe seleccionar la casilla" required/>
+                                                    Acepto expresamente la política de protección de datos
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <li id="form_buttons">
+                                    <input id="submit" type="submit" value="Enviar"/>
+                                    <input id="reset" type="reset" value="Vaciar"/>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </article>
+        
+        <footer>
+            <div id="contact">
+                <p>La Galería Ecléctica</p>
+                <p>Plaza del Poblenou, 1. 08018 Barcelona</p>
+                <p><i class="fa fa-phone"></i>Tel. 93 555 55 55</p>
+                <p><i class="fa fa-envelope"></i>info@lagaec.org</p>
+                <a href="" title="Enlace a twitter"><span class="fab fa-twitter fa-2x"></span></a>
+                <a href="" title="Enlace a facebool"><span class="fab fa-facebook fa-2x"></span></a>
+                <a href="" title="Enlace a instagram"><span class="fab fa-instagram fa-2x"></span></a>
+                <a href="" title="Enlace a youtube"><span class="fab fa-youtube fa-2x"></span></a>
+            </div>
+            <form action="submit" method="get" id="footer_form">
+                <p>Formulario suscripción a la Newsletter</p>
+                <ul>
+                    <li>
+                        <label for="mail">Correo electrónico</label>
+                        <input id="mail" name="mail" type="email"/>
+                    </li>
+                    <li>
+                        <label for="policy1" class="accept">
+                            <input id="policy1" name="policy" type="checkbox" title="Debe seleccionar la casilla" required/>
+                            Acepto expresamente la política de protección de datos.
+                        </label>
+                    </li>
+                    <li>
+                        <input id="submit_form" type="submit" value="Enviar"/>
+                    </li>
+                </ul>
+            </form>
+            
+            <div id="info">
+                <img src="img/ico.png" alt="icono de La Galería Ecléctica">
+                <div>
+                    <p><a href="">Quiénes somos</a></p>
+                    <p><a href="">Política de privacidad</a></p>
+                    <p><a href="">Aviso legal</a></p>
+                    <p><a href="">Cookies</a></p>
+                 </div>
+            </div>
+            
+            <div id="credits">
+                <p><a href="">Créditos</a></p>
+                <p>
+                    &copy; LAGaEC. Imágenes de las obras artísticas de dominio público
+                    <a href="https://www.metmuseum.org/art/collection/search#!?searchField=All&showOnly=openAccess&sortBy=relevance&offset=0&pageSize=0"
+                       title="Enlace con la página de metmuseum">
+                        The Metropolitan Museum.
+                    </a>
+                    <a href="">Fotografías</a>
+                    <a href="https://unsplash.com/">Unsplash</a>
+                </p>
+                <p>
+                    Actividad realizada por Gabriel y Cambronero Serentills, 
+                    para la asignatura HTML y CSS. Primer semestre del curso 
+                    2018-2019
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
